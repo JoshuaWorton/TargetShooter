@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class DoorOpener : MonoBehaviour
 {
+    private AudioSource doorOpen;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,5 +20,7 @@ public class DoorOpener : MonoBehaviour
         GameObject parent = transform.parent.gameObject;       
         Animation animation = parent.GetComponent<Animation>();       
         animation.Play("OpenDoor");
+        AudioSource doorOpen = GetComponent<AudioSource>();
+            doorOpen.Play();
     }
 }
